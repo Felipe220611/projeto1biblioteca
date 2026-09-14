@@ -4,7 +4,7 @@ USE biblioteca_1ano;
 
 #Criando usuário
 CREATE USER 'biblioteca_user1'@'localhost' IDENTIFIED BY 'projeto1';
-
+# caso usuário exista trocar create para alter
 
 #Dar Permissão ao usuário
 GRANT ALL PRIVILEGES
