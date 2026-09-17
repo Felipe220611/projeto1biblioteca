@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect
 import mysql.connector
 from config import DB_CONFIG
 
-
 app = Flask(__name__)
 
 
@@ -21,17 +20,13 @@ def listar_alunos():
         conexao = conectar()
         cursor = conexao.cursor(dictionary=True)
 
-
         cursor.execute("SELECT * FROM aluno")
         alunos = cursor.fetchall()
-
 
         cursor.close()
         conexao.close()
 
-
         return render_template("alunos.html", alunos=alunos)
-
 
     except Exception as erro:
         return f"Erro ao listar alunos: {erro}"
@@ -50,18 +45,76 @@ def cadastrar_aluno():
         turma = request.form["turma"]
         telefone = request.form["telefone"]
 
-
         conexao = conectar()
         cursor = conexao.cursor()
-
 
         sql = """
             INSERT INTO aluno (nome, serie, turma, telefone)
             VALUES (%s, %s, %s, %s)
         """
 
-
         valores = (nome, serie, turma, telefone)
+
+        cursor.execute(sql, valores)
+        conexao.commit()
+
+        cursor.close()
+        conexao.close()
+
+        return redirect("/alunos")
+
+    except Exception as erro:
+        return f"Erro ao cadastrar aluno: {erro}"
+
+
+
+# Rotas para livros
+@app.route("/livros")
+def listar_livros():
+    try:
+        conexao = conectar()
+        cursor = conexao.cursor(dictionary=True)
+
+
+        cursor.execute("SELECT * FROM livro")
+        livros = cursor.fetchall()
+
+
+        cursor.close()
+        conexao.close()
+
+
+        return render_template("livros.html", livros=livros)
+
+
+    except Exception as erro:
+        return f"Erro ao listar livros: {erro}"
+
+
+@app.route("/livros/novo")
+def formulario_livro():
+    return render_template("livro_form.html")
+
+
+@app.route("/livros/cadastrar", methods=["POST"])
+def cadastrar_livro():
+    try:
+        titulo = request.form["titulo"]
+        autor = request.form["autor"]
+        categoria = request.form["categoria"]
+
+
+        conexao = conectar()
+        cursor = conexao.cursor()
+
+
+        sql = """
+            INSERT INTO livro (titulo, autor, categoria, status)
+            VALUES (%s, %s, %s, %s)
+        """
+
+
+        valores = (titulo, autor, categoria, "Disponível")
 
 
         cursor.execute(sql, valores)
@@ -72,11 +125,11 @@ def cadastrar_aluno():
         conexao.close()
 
 
-        return redirect("/alunos")
+        return redirect("/livros")
 
 
     except Exception as erro:
-        return f"Erro ao cadastrar aluno: {erro}"
+        return f"Erro ao cadastrar livro: {erro}"
 
 
 if __name__ == "__main__":
