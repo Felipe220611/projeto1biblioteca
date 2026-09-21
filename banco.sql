@@ -60,9 +60,9 @@ CREATE TABLE bibliotecario (
 #Criação da tabela de Empréstimo
 CREATE TABLE emprestimo (
     id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
-    id_aluno INT,
-    id_livro INT,
-    id_bibliotecario INT,
+    id_aluno INT NOT NULL,
+    id_livro INT NOT NULL,
+    id_bibliotecario INT NOT NULL,
     data_emprestimo DATE NOT NULL,
     data_prevista_devolucao DATE NOT NULL,
     data_devolucao DATE,
