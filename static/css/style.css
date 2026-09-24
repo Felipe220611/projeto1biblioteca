@@ -1,141 +1,141 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-color: #f4f8ff; /* Fundo suave, descansa a vista */
-    color: #1F2937; /* Texto escuro com alto contraste */
- }
- 
- 
- header {
-    background-color: #0F172A; /* Topo azul-escuro/grafite profissional */
-    color: #ffffff;
-    padding: 20px 30px;
- }
- 
- 
- header h1 {
-    margin: 0;
-    color: #FFFFFF;
- }
- 
- 
- nav {
-    margin-top: 10px;
- }
- 
- 
- nav a {
-    color: #38BDF8; /* Links do menu em azul claro */
-    text-decoration: none;
-    margin-right: 15px;
-    font-weight: 500;
- }
- 
- 
- nav a:hover {
-    color: #FFFFFF;
-    text-decoration: underline;
- }
- 
- 
- main {
-    width: 90%;
-    margin: 20px auto;
-    background-color: #FFFFFF; /* Card central branco e destacado */
-    padding: 25px;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra suave elegante */
- }
- 
- 
- h2 {
-    color: #0F172A;
- }
- 
- 
- table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #FFFFFF;
- }
- 
- 
- th {
-    background-color: #1E293B; /* Cabeçalho da tabela combinando com o topo */
-    color: #FFFFFF;
- }
- 
- 
- th,
- td {
-    border: 1px solid #E2E8F0;
-    padding: 12px;
-    text-align: left;
- }
- 
- 
- /* Efeito zebrado leve nas tabelas */
- tr:nth-child(even) {
-    background-color: #F8FAFC;
- }
- 
- 
- form {
-    width: 400px;
- }
- 
- 
- label {
-    font-weight: bold;
-    color: #334155;
- }
- 
- 
- input,
- select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    margin-bottom: 12px;
-    border: 1px solid #CBD5E1;
-    border-radius: 6px;
-    background-color: #FFFFFF;
-    color: #0F172A;
- }
- 
- 
- input:focus,
- select:focus {
-    outline: none;
-    border-color: #0284C7;
- }
- 
- 
- button {
-    padding: 10px 20px;
-    background-color: #0284C7; /* Botão em destaque tom azul-oceano */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
- }
- 
- 
- button:hover {
-    background-color: #0369A1;
- }
- 
- 
- a {
-    color: #0284C7;
-    text-decoration: none;
- }
- 
- 
- a:hover {
-    text-decoration: underline;
- }
- 
+   font-family: Arial, Helvetica, sans-serif;
+   margin: 0;
+   background-color: #121212; /* Fundo geral escuro */
+   color: #E0E0E0; /* Texto claro de alto contraste */
+}
+
+
+header {
+   background-color: #1A1A1A; /* Topo escuro elegante */
+   color: #ffffff;
+   padding: 20px 30px;
+   border-bottom: 1px solid #333333;
+}
+
+
+header h1 {
+   margin: 0;
+   color: #F3E5AB; /* Dourado suave para o título principal */
+}
+
+
+nav {
+   margin-top: 10px;
+}
+
+
+nav a {
+   color: #D4AF37; /* Links do menu em dourado */
+   text-decoration: none;
+   margin-right: 15px;
+   font-weight: 500;
+}
+
+
+nav a:hover {
+   color: #FFFFFF;
+   text-decoration: underline;
+}
+
+
+main {
+   width: 90%;
+   margin: 20px auto;
+   background-color: #1E1E1E; /* Card central escuro destacado */
+   padding: 25px;
+   border: 1px solid #333333;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais marcada para o tema escuro */
+}
+
+
+h2 {
+   color: #F3E5AB; /* Título secundário em dourado suave */
+}
+
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   background-color: #1E1E1E;
+}
+
+
+th {
+   background-color: #2A2A2A; /* Cabeçalho da tabela */
+   color: #D4AF37; /* Texto do cabeçalho em dourado */
+}
+
+
+th,
+td {
+   border: 1px solid #333333;
+   padding: 12px;
+   text-align: left;
+}
+
+
+/* Efeito zebrado leve para tabelas no modo escuro */
+tr:nth-child(even) {
+   background-color: #252525;
+}
+
+
+form {
+   width: 400px;
+}
+
+
+label {
+   font-weight: bold;
+   color: #E0E0E0;
+}
+
+
+input,
+select {
+   width: 100%;
+   padding: 10px;
+   margin-top: 4px;
+   margin-bottom: 12px;
+   border: 1px solid #444444;
+   border-radius: 6px;
+   background-color: #2A2A2A; /* Campos de input escuros */
+   color: #FFFFFF;
+}
+
+
+input:focus,
+select:focus {
+   outline: none;
+   border-color: #D4AF37; /* Destaque ao focar no campo */
+}
+
+
+button {
+   padding: 10px 20px;
+   background-color: #C59B27; /* Botão em destaque dourado */
+   color: #121212; /* Texto escuro dentro do botão para bom contraste */
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: background-color 0.2s;
+}
+
+
+button:hover {
+   background-color: #E5B838;
+}
+
+
+a {
+   color: #D4AF37;
+   text-decoration: none;
+}
+
+
+a:hover {
+   text-decoration: underline;
+}
