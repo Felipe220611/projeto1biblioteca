@@ -8,7 +8,7 @@
 
 
 <form method="POST" action="/alunos/atualizar/{{ aluno.id_aluno }}">
-
+    flash("Aluno atualizado com sucesso!", "sucesso")
 
     <label>Nome:</label>
     <input type="text" name="nome" value="{{ aluno.nome }}" required>

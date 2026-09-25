@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash
 import mysql.connector
 from config import DB_CONFIG
 
 app = Flask(__name__)
-
+app.secret_key = "biblioteca_escolar"
 
 def conectar():
     return mysql.connector.connect(**DB_CONFIG)
@@ -55,8 +55,9 @@ def cadastrar_aluno():
 
         valores = (nome, serie, turma, telefone)
 
-        cursor.execute(sql, valores)
+        cursor.execute(sql, valores)  
         conexao.commit()
+        flash("Aluno cadastrado com sucesso!", "sucesso")  
 
         cursor.close()
         conexao.close()
@@ -64,9 +65,8 @@ def cadastrar_aluno():
         return redirect("/alunos")
 
     except Exception as erro:
-        return f"Erro ao cadastrar aluno: {erro}"
-
-
+        flash(f"Erro ao atualizar aluno: {erro}", "erro")
+        return redirect("/alunos")
 
 # Rotas para livros
 @app.route("/livros")
