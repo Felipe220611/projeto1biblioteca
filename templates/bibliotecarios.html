@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
-
 {% block conteudo %}
 
-
 <h2>Bibliotecários Cadastrados</h2>
-
 
 <p>
     <a href="/bibliotecarios/novo">Cadastrar novo bibliotecário</a>
 </p>
 
+<form method="GET" action="/bibliotecarios">
+    <label>Pesquisar bibliotecário:</label>
+    <input type="text" name="pesquisa" value="{{ pesquisa }}" placeholder="Nome ou e-mail">
+
+    <button type="submit">Pesquisar</button>
+
+    <a href="/bibliotecarios">Limpar</a>
+</form>
+<br>
 
 <table>
     <thead>
@@ -22,7 +28,6 @@
         </tr>
     </thead>
 
-
     <tbody>
         {% for bibliotecario in bibliotecarios %}
         <tr>
@@ -32,9 +37,7 @@
             <td>
                 <a href="/bibliotecarios/editar/{{ bibliotecario.id_bibliotecario }}">Editar</a>
 
-
                 |
-
 
                 <a href="/bibliotecarios/excluir/{{ bibliotecario.id_bibliotecario }}"
                    onclick="return confirm('Deseja realmente excluir este bibliotecário?')">
@@ -45,6 +48,5 @@
         {% endfor %}
     </tbody>
 </table>
-
 
 {% endblock %}
