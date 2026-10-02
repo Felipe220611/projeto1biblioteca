@@ -1,182 +1,166 @@
 body {
    font-family: Arial, Helvetica, sans-serif;
    margin: 0;
-   background-color: #121212; /* Fundo geral escuro */
-   color: #E0E0E0; /* Texto claro de alto contraste */
+   background-color: #f2f2f2;
+   color: #333;
 }
-
-
 
 
 header {
-   background-color: #1A1A1A; /* Topo escuro elegante */
-   color: #ffffff;
-   padding: 20px 30px;
-   border-bottom: 1px solid #333333;
+   background-color: #2c3e50;
+   color: white;
 }
 
 
+.topo {
+   padding: 20px;
+}
 
 
-header h1 {
+.topo h1 {
    margin: 0;
-   color: #F3E5AB; /* Dourado suave para o título principal */
 }
 
 
+.topo p {
+   margin: 5px 0 0 0;
+}
 
 
 nav {
-   margin-top: 10px;
+   background-color: #1a252f;
+   padding: 12px 20px;
 }
-
-
 
 
 nav a {
-   color: #D4AF37; /* Links do menu em dourado */
+   color: white;
    text-decoration: none;
-   margin-right: 15px;
-   font-weight: 500;
+   margin-right: 18px;
+   font-weight: bold;
 }
 
 
-
-
 nav a:hover {
-   color: #FFFFFF;
    text-decoration: underline;
 }
 
 
-
-
 main {
    width: 90%;
-   margin: 20px auto;
-   background-color: #1E1E1E; /* Card central escuro destacado */
+   margin: 25px auto;
+   background-color: white;
    padding: 25px;
-   border: 1px solid #333333;
-   border-radius: 8px;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais marcada para o tema escuro */
+   border: 1px solid #ddd;
+   min-height: 400px;
 }
 
 
+footer {
+   background-color: #2c3e50;
+   color: white;
+   text-align: center;
+   padding: 12px;
+   margin-top: 30px;
+}
 
 
 h2 {
-   color: #F3E5AB; /* Título secundário em dourado suave */
+   color: #2c3e50;
+   margin-top: 0;
 }
 
 
+h3 {
+   color: #34495e;
+}
 
 
 table {
    width: 100%;
    border-collapse: collapse;
-   background-color: #1E1E1E;
+   background-color: white;
+   margin-top: 15px;
 }
-
-
 
 
 th {
-   background-color: #2A2A2A; /* Cabeçalho da tabela */
-   color: #D4AF37; /* Texto do cabeçalho em dourado */
+   background-color: #34495e;
+   color: white;
 }
-
-
 
 
 th,
 td {
-   border: 1px solid #333333;
-   padding: 12px;
+   border: 1px solid #ccc;
+   padding: 10px;
    text-align: left;
 }
 
 
-
-
-/* Efeito zebrado leve para tabelas no modo escuro */
 tr:nth-child(even) {
-   background-color: #252525;
+   background-color: #f8f8f8;
 }
-
-
 
 
 form {
-   width: 400px;
+   max-width: 500px;
+   margin-bottom: 20px;
 }
-
-
 
 
 label {
    font-weight: bold;
-   color: #E0E0E0;
 }
-
-
 
 
 input,
 select {
    width: 100%;
-   padding: 10px;
+   padding: 8px;
    margin-top: 4px;
    margin-bottom: 12px;
-   border: 1px solid #444444;
-   border-radius: 6px;
-   background-color: #2A2A2A; /* Campos de input escuros */
-   color: #FFFFFF;
+   border: 1px solid #aaa;
+   box-sizing: border-box;
 }
-
-
-
-
-input:focus,
-select:focus {
-   outline: none;
-   border-color: #D4AF37; /* Destaque ao focar no campo */
-}
-
-
 
 
 button {
    padding: 10px 20px;
-   background-color: #C59B27; /* Botão em destaque dourado */
-   color: #121212; /* Texto escuro dentro do botão para bom contraste */
+   background-color: #2c3e50;
+   color: white;
    border: none;
-   border-radius: 6px;
    cursor: pointer;
-   font-weight: bold;
-   transition: background-color 0.2s;
 }
-
-
 
 
 button:hover {
-   background-color: #E5B838;
+   background-color: #1a252f;
 }
-
-
 
 
 a {
-   color: #D4AF37;
-   text-decoration: none;
+   color: #2c3e50;
 }
 
 
-
-
-a:hover {
-   text-decoration: underline;
+form a {
+   margin-left: 10px;
 }
+
+
+input::placeholder {
+   color: #777;
+}
+
+
+.mensagem {
+   padding: 12px;
+   margin-bottom: 15px;
+   border-radius: 4px;
+   font-weight: bold;
+}
+
 
 .sucesso {
    background-color: #d4edda;
@@ -198,14 +182,6 @@ a:hover {
    border: 1px solid #ffeeba;
 }
 
-form a {
-   margin-left: 10px;
-}
-
-
-input::placeholder {
-   color: #777;
-}
 
 .painel {
    display: flex;
@@ -234,6 +210,7 @@ input::placeholder {
    font-weight: bold;
    color: #34495e;
 }
+
 
 .atraso {
    color: #c0392b;
