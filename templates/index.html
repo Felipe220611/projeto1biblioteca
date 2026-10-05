@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
+if "id_usuario" not in session:
+return redirect("/login")
+
 
 {% block conteudo %}
 

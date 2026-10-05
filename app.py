@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, session
 import mysql.connector
 from config import DB_CONFIG
 
@@ -869,6 +869,65 @@ def listar_emprestimos_atrasados():
     except Exception as erro:
         flash(f"Erro ao listar empréstimos atrasados: {erro}", "erro")
         return redirect("/emprestimos")
+
+## Rota de Login
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+
+
+@app.route("/login/autenticar", methods=["POST"])
+def autenticar():
+    login = request.form['login']
+    senha = request.form['senha']
+
+    try:
+        conexao = conectar()
+        cursor = conexao.cursor(dictionary=True)
+
+        sql = """
+            SELECT *
+            FROM usuario
+            WHERE login = %s
+            AND senha = %s
+        """
+        
+        # Certifique-se de que passa (login, senha) aqui, e NÃO (email, senha):
+        cursor.execute(sql, (login, senha)) 
+        usuario = cursor.fetchone()
+
+
+        cursor.close()
+        conexao.close()
+
+
+        if usuario:
+            session["id_usuario"] = usuario["id_usuario"]
+            session["nome"] = usuario["nome"]
+            session["perfil"] = usuario["perfil"]
+
+
+            flash("Login realizado com sucesso!", "sucesso")
+            return redirect("/")
+        else:
+            flash("E-mail ou senha inválidos.", "erro")
+            return redirect("/login")
+
+
+    except Exception as erro:
+        flash(f"Erro ao realizar login: {erro}", "erro")
+        return redirect("/login")
+
+
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("Você saiu do sistema.", "sucesso")
+    return redirect("/login")
 
 
 if __name__ == "__main__":
